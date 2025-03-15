@@ -1,0 +1,237 @@
+@import 'tailwindcss';
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f6f7f8;
+  overflow-x: hidden;
+}
+
+@theme {
+  --color-gray-100: #e8eaed;
+  --color-gray-300: #d9dce2;
+  --color-gray-400: #a8afbd;
+  --color-gray-500: hsla(0, 0%, 78.4%, 0.4);
+  --color-gray-600: #586174;
+  --color-gray-700: #424957;
+  --color-white-60: hsla(0, 0%, 100%, 0.6);
+  --color-white-40: hsla(0, 0%, 100%, 0.4);
+  --color-green-200: #1ce78390;
+  --color-green-300: #00ed82;
+  --color-green-400: #1ce783;
+  --color-gray-900: #040405;
+  --color-gray-950: #0b0c0f;
+  --shadow-lg: 0 7px 6px rgba(0, 0, 0, 0.16);
+  --breakpoint-xsm: 441px;
+}
+
+.svg {
+  fill: #1ce783;
+}
+
+button svg {
+  fill: #fff;
+}
+
+@layer base {
+  .bg-gradient-custom {
+    background-image: -webkit-linear-gradient(
+      315deg,
+      #231437,
+      #2c385e 50%,
+      #336e6b
+    );
+    background-image: -moz-linear-gradient(
+      315deg,
+      #231437 0,
+      #2c385e 50%,
+      #336e6b 100%
+    );
+    background-image: linear-gradient(135deg, #231437, #2c385e 50%, #336e6b);
+  }
+
+  .bg-gradient-skrim::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-[180px];
+    background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.76) 15.54%,
+      rgba(0, 0, 0, 0.192) 60.23%,
+      rgba(0, 0, 0, 0.00008)
+    );
+    background: -moz-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.76) 15.54%,
+      rgba(0, 0, 0, 0.192) 60.23%,
+      rgba(0, 0, 0, 0.00008) 100%
+    );
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.76) 15.54%,
+      rgba(0, 0, 0, 0.192) 60.23%,
+      rgba(0, 0, 0, 0.00008)
+    );
+  }
+
+  .ribbon-black-transparent {
+    background: -webkit-linear-gradient(
+      270.19deg,
+      rgba(4, 4, 4, 0.7) 0.17%,
+      rgba(4, 4, 4, 0.45) 85.02%,
+      rgba(4, 4, 4, 0.3) 112.52%
+    ) !important;
+    background: -moz-linear-gradient(
+      270.19deg,
+      rgba(4, 4, 4, 0.7) 0.17%,
+      rgba(4, 4, 4, 0.45) 85.02%,
+      rgba(4, 4, 4, 0.3) 112.52%
+    ) !important;
+    background: linear-gradient(
+      179.81deg,
+      rgba(4, 4, 4, 0.7) 0.17%,
+      rgba(4, 4, 4, 0.45) 85.02%,
+      rgba(4, 4, 4, 0.3) 112.52%
+    ) !important;
+  }
+
+  .library_gradient {
+    background: -webkit-linear-gradient(
+        293.18deg,
+        rgba(0, 0, 0, 0.6) 4.58%,
+        transparent 69.61%
+      ),
+      -webkit-linear-gradient(65.5deg, rgba(0, 0, 0, 0.2) 4.71%, transparent
+            71.49%);
+    background: -moz-linear-gradient(
+        293.18deg,
+        rgba(0, 0, 0, 0.6) 4.58%,
+        transparent 69.61%
+      ),
+      -moz-linear-gradient(65.5deg, rgba(0, 0, 0, 0.2) 4.71%, transparent 71.49%);
+    background: linear-gradient(
+        156.82deg,
+        rgba(0, 0, 0, 0.6) 4.58%,
+        transparent 69.61%
+      ),
+      linear-gradient(24.5deg, rgba(0, 0, 0, 0.2) 4.71%, transparent 71.49%);
+  }
+
+  .library_grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+  }
+
+  .live__sport,
+  .breaking_news,
+  .biggest_event {
+    @apply w-full bg-cover bg-top bg-no-repeat bg-gray-950;
+  }
+
+  @media (min-width: 768px) {
+    .live_sport,
+    .breaking_news,
+    .biggest_event {
+      background-position: 0 80%;
+      background-size: cover;
+    }
+  }
+  .live_sport {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8) -39.59%,
+        rgba(0, 0, 0, 0) 117.14%
+      ),
+      url('./assets/live_sport_medium.jpeg');
+  }
+
+  .biggest_event {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8) -39.59%,
+        rgba(0, 0, 0, 0) 117.14%
+      ),
+      url('./assets/biggest_event_medium.jpeg');
+  }
+
+  .breaking_news {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8) -39.59%,
+        rgba(0, 0, 0, 0) 117.14%
+      ),
+      url('./assets/tv_news_medium.jpeg');
+  }
+
+  @media (min-width: 1024px) {
+    .live_sport,
+    .breaking_news,
+    .breaking_news {
+      background-position: 0 0;
+    }
+    .live_sport {
+      background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.8) -57.5%,
+          rgba(0, 0, 0, 0) 98.72%
+        ),
+        url('./assets/live_sport.jpeg');
+    }
+
+    .biggest_event {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.8) -39.59%,
+          rgba(0, 0, 0, 0) 117.14%
+        ),
+        url('./assets/biggest_event.jpeg');
+    }
+
+    .breaking_news {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.8) -39.59%,
+          rgba(0, 0, 0, 0) 117.14%
+        ),
+        url('./assets/tv_news.jpeg');
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .library_grid {
+      grid-template-columns: repeat(4, 311px);
+    }
+  }
+
+  @media only screen and (min-width: 0px) {
+    .bg-image-custom {
+      background-image: linear-gradient(
+          0deg,
+          transparent 60%,
+          rgba(0, 0, 0, 0.2) 90%,
+          rgba(0, 0, 0, 0.4) 100%
+        ),
+        url('./assets/original_small.jpeg');
+    }
+  }
+
+  @media only screen and (min-width: 441px) {
+    .bg-image-custom {
+      background-image: linear-gradient(
+          0deg,
+          transparent 60%,
+          rgba(0, 0, 0, 0.2) 90%,
+          rgba(0, 0, 0, 0.4) 100%
+        ),
+        url('./assets/original_medium.jpeg');
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    .bg-image-custom {
+      background-image: linear-gradient(
+          0deg,
+          transparent 60%,
+          rgba(0, 0, 0, 0.2) 90%,
+          rgba(0, 0, 0, 0.4) 100%
+        ),
+        url('./assets/original_large.jpeg');
+    }
+  }
+}
